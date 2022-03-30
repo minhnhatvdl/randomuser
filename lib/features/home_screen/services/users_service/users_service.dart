@@ -7,14 +7,18 @@ class UsersService extends StateNotifier<UsersState> {
   UsersService(this.usersRepository) : super(const InitUsersState());
   final UsersRepository usersRepository;
   int _page = 1;
+  List<UserModel> _users = [];
 
   Future<void> getUsers() async {
-    state = const LoadingUsersState();
+    if (state is InitUsersState) {
+      state = const LoadingUsersState();
+    }
     final RepositoryResponse<SimpleStatus, List<UserModel>> response =
         await usersRepository.getUsers(_page);
     if (response.status == SimpleStatus.success) {
       _page++;
-      state = LoadedUsersState(response.content!);
+      _users = [..._users, ...response.content!];
+      state = LoadedUsersState(_users);
     } else {
       state = const ErrorUsersState();
     }

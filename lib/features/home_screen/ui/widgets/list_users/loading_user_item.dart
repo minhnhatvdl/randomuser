@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:randomuser/common/ui/box_shadow_container.dart';
 import 'package:randomuser/common/ui/shimmer/shimmer.dart';
+import 'box_shadow_container.dart';
 
 class LoadingUserItem extends StatelessWidget {
   const LoadingUserItem({Key? key}) : super(key: key);

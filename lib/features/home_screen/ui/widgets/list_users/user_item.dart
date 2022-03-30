@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:randomuser/common/models/user/user_model.dart';
 import 'package:randomuser/common/ui/avatar_profile/avatar_profile.dart';
-import 'package:randomuser/common/ui/box_shadow_container.dart';
 import 'package:randomuser/common/utils/user_util.dart';
+import 'box_shadow_container.dart';
 
 class UserItem extends StatelessWidget {
   const UserItem(this.user, {Key? key}) : super(key: key);
