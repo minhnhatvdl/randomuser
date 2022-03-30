@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:randomuser/features/home_screen/repositories/users_repository.dart';
 import 'package:randomuser/features/home_screen/services/users_service/users_service.dart';
+import 'package:randomuser/features/home_screen/services/users_service/users_state/users_state.dart';
 import 'package:randomuser/locator.dart';
+import 'widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -13,23 +14,32 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late UsersService _usersService;
+  final ScrollController _scrollController = ScrollController();
+  @override
+  void initState() {
+    super.initState();
+    _usersService = UsersService(locator<UsersRepository>())..getUsers();
+    _scrollController.addListener(() {
+      if (_scrollController.position.pixels ==
+          _scrollController.position.maxScrollExtent) {
+        _usersService.getUsers();
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Provider(
-      create: (_) => UsersService(locator<UsersRepository>()),
+    return StateNotifierProvider<UsersService, UsersState>.value(
+      value: _usersService,
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.appName),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
-              Text(
-                'You have pushed the button this many times:',
-              ),
-            ],
-          ),
+        body: CustomScrollView(
+          controller: _scrollController,
+          physics: const BouncingScrollPhysics(),
+          slivers: const [
+            HomeAppBar(),
+            ListUsers(),
+          ],
         ),
       ),
     );

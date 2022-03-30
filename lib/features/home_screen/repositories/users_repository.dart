@@ -2,12 +2,14 @@ import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:randomuser/common/models/models.dart';
 import 'package:randomuser/core/app_api.dart';
+import 'package:randomuser/core/app_config.dart';
 
 class UsersRepository {
   Future<RepositoryResponse<SimpleStatus, List<UserModel>>> getUsers(
       int page) async {
     try {
-      final Uri url = Uri.parse('${AppApi.randomuser}?page=$page');
+      final Uri url = Uri.parse(
+          '${AppApi.randomuser}?page=$page&results=${AppConfig.maxUsersPerPage}&seed=${AppConfig.seed}');
       final Response result = await get(url);
       if (result.statusCode == 200) {
         final GeneralDataModel generalDataModel = GeneralDataModel.fromJson(

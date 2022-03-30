@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:randomuser/core/app_theme.dart';
 import 'package:randomuser/features/home_screen/ui/home_screen.dart';
 import 'locator.dart';
 
@@ -26,9 +27,7 @@ class MyApp extends StatelessWidget {
         Locale('en', ''),
         Locale('fr', ''),
       ],
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: AppTheme.theme,
       home: const HomeScreen(),
     );
   }
