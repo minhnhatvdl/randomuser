@@ -8,6 +8,6 @@ A randomuser application with features:
 
 ## Getting Started
 
-flutter pub get
-flutter pub run build_runner build
-flutter run
+  flutter pub get
+  flutter pub run build_runner build
+  flutter run

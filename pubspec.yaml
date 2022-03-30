@@ -39,6 +39,10 @@ dependencies:
   intl: ^0.17.0
   freezed_annotation: ^1.1.0
   json_annotation: ^4.4.0
+  http: ^0.13.4
+  state_notifier: ^0.7.2+1
+  provider: ^6.0.2
+  get_it: ^7.2.0
 
 dev_dependencies:
   flutter_test:
