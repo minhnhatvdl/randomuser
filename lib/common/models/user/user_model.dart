@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'dob/dob_model.dart';
+import 'date/date_model.dart';
 import 'location/location_model.dart';
 import 'name/name_model.dart';
 import 'picture/picture_model.dart';
@@ -14,7 +14,8 @@ class UserModel with _$UserModel {
     required NameModel name,
     required LocationModel location,
     required String email,
-    required DobModel dob,
+    required DateModel dob,
+    required DateModel registered,
     required String phone,
     required PictureModel picture,
   }) = _UserModel;

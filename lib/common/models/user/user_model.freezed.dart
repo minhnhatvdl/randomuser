@@ -27,7 +27,8 @@ class _$UserModelTearOff {
       required NameModel name,
       required LocationModel location,
       required String email,
-      required DobModel dob,
+      required DateModel dob,
+      required DateModel registered,
       required String phone,
       required PictureModel picture}) {
     return _UserModel(
@@ -36,6 +37,7 @@ class _$UserModelTearOff {
       location: location,
       email: email,
       dob: dob,
+      registered: registered,
       phone: phone,
       picture: picture,
     );
@@ -55,7 +57,8 @@ mixin _$UserModel {
   NameModel get name => throw _privateConstructorUsedError;
   LocationModel get location => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  DobModel get dob => throw _privateConstructorUsedError;
+  DateModel get dob => throw _privateConstructorUsedError;
+  DateModel get registered => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
   PictureModel get picture => throw _privateConstructorUsedError;
 
@@ -74,13 +77,15 @@ abstract class $UserModelCopyWith<$Res> {
       NameModel name,
       LocationModel location,
       String email,
-      DobModel dob,
+      DateModel dob,
+      DateModel registered,
       String phone,
       PictureModel picture});
 
   $NameModelCopyWith<$Res> get name;
   $LocationModelCopyWith<$Res> get location;
-  $DobModelCopyWith<$Res> get dob;
+  $DateModelCopyWith<$Res> get dob;
+  $DateModelCopyWith<$Res> get registered;
   $PictureModelCopyWith<$Res> get picture;
 }
 
@@ -99,6 +104,7 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
     Object? location = freezed,
     Object? email = freezed,
     Object? dob = freezed,
+    Object? registered = freezed,
     Object? phone = freezed,
     Object? picture = freezed,
   }) {
@@ -122,7 +128,11 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
       dob: dob == freezed
           ? _value.dob
           : dob // ignore: cast_nullable_to_non_nullable
-              as DobModel,
+              as DateModel,
+      registered: registered == freezed
+          ? _value.registered
+          : registered // ignore: cast_nullable_to_non_nullable
+              as DateModel,
       phone: phone == freezed
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -149,9 +159,16 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
   }
 
   @override
-  $DobModelCopyWith<$Res> get dob {
-    return $DobModelCopyWith<$Res>(_value.dob, (value) {
+  $DateModelCopyWith<$Res> get dob {
+    return $DateModelCopyWith<$Res>(_value.dob, (value) {
       return _then(_value.copyWith(dob: value));
+    });
+  }
+
+  @override
+  $DateModelCopyWith<$Res> get registered {
+    return $DateModelCopyWith<$Res>(_value.registered, (value) {
+      return _then(_value.copyWith(registered: value));
     });
   }
 
@@ -174,7 +191,8 @@ abstract class _$UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
       NameModel name,
       LocationModel location,
       String email,
-      DobModel dob,
+      DateModel dob,
+      DateModel registered,
       String phone,
       PictureModel picture});
 
@@ -183,7 +201,9 @@ abstract class _$UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
   @override
   $LocationModelCopyWith<$Res> get location;
   @override
-  $DobModelCopyWith<$Res> get dob;
+  $DateModelCopyWith<$Res> get dob;
+  @override
+  $DateModelCopyWith<$Res> get registered;
   @override
   $PictureModelCopyWith<$Res> get picture;
 }
@@ -204,6 +224,7 @@ class __$UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
     Object? location = freezed,
     Object? email = freezed,
     Object? dob = freezed,
+    Object? registered = freezed,
     Object? phone = freezed,
     Object? picture = freezed,
   }) {
@@ -227,7 +248,11 @@ class __$UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
       dob: dob == freezed
           ? _value.dob
           : dob // ignore: cast_nullable_to_non_nullable
-              as DobModel,
+              as DateModel,
+      registered: registered == freezed
+          ? _value.registered
+          : registered // ignore: cast_nullable_to_non_nullable
+              as DateModel,
       phone: phone == freezed
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
@@ -250,6 +275,7 @@ class _$_UserModel implements _UserModel {
       required this.location,
       required this.email,
       required this.dob,
+      required this.registered,
       required this.phone,
       required this.picture});
 
@@ -265,7 +291,9 @@ class _$_UserModel implements _UserModel {
   @override
   final String email;
   @override
-  final DobModel dob;
+  final DateModel dob;
+  @override
+  final DateModel registered;
   @override
   final String phone;
   @override
@@ -273,7 +301,7 @@ class _$_UserModel implements _UserModel {
 
   @override
   String toString() {
-    return 'UserModel(gender: $gender, name: $name, location: $location, email: $email, dob: $dob, phone: $phone, picture: $picture)';
+    return 'UserModel(gender: $gender, name: $name, location: $location, email: $email, dob: $dob, registered: $registered, phone: $phone, picture: $picture)';
   }
 
   @override
@@ -286,6 +314,8 @@ class _$_UserModel implements _UserModel {
             const DeepCollectionEquality().equals(other.location, location) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.dob, dob) &&
+            const DeepCollectionEquality()
+                .equals(other.registered, registered) &&
             const DeepCollectionEquality().equals(other.phone, phone) &&
             const DeepCollectionEquality().equals(other.picture, picture));
   }
@@ -298,6 +328,7 @@ class _$_UserModel implements _UserModel {
       const DeepCollectionEquality().hash(location),
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(dob),
+      const DeepCollectionEquality().hash(registered),
       const DeepCollectionEquality().hash(phone),
       const DeepCollectionEquality().hash(picture));
 
@@ -318,7 +349,8 @@ abstract class _UserModel implements UserModel {
       required NameModel name,
       required LocationModel location,
       required String email,
-      required DobModel dob,
+      required DateModel dob,
+      required DateModel registered,
       required String phone,
       required PictureModel picture}) = _$_UserModel;
 
@@ -334,7 +366,9 @@ abstract class _UserModel implements UserModel {
   @override
   String get email;
   @override
-  DobModel get dob;
+  DateModel get dob;
+  @override
+  DateModel get registered;
   @override
   String get phone;
   @override

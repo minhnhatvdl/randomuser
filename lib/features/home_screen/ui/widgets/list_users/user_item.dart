@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:randomuser/common/models/user/user_model.dart';
 import 'package:randomuser/common/ui/avatar_profile/avatar_profile.dart';
 import 'package:randomuser/common/utils/user_util.dart';
+import 'package:randomuser/features/user_screen/ui/user_screen.dart';
 import 'box_shadow_container.dart';
 
 class UserItem extends StatelessWidget {
@@ -13,7 +14,10 @@ class UserItem extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
 
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute<void>(builder: (context) => UserScreen(user)),
+      ),
       child: BoxShadowContainer(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

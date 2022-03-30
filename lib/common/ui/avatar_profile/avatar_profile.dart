@@ -10,12 +10,14 @@ class AvatarProfile extends StatelessWidget {
     this.username,
     this.size = AvatarProfileSize.small,
     this.onTap,
+    this.showBorder = false,
     Key? key,
   }) : super(key: key);
   final String urlImage;
   final String? username;
   final AvatarProfileSize size;
   final VoidCallback? onTap;
+  final bool showBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +25,19 @@ class AvatarProfile extends StatelessWidget {
 
     return GestureDetector(
       onTap: onTap,
-      child: SizedBox(
+      child: Container(
         width: _getSize(),
         height: _getSize(),
+        decoration: showBorder
+            ? const ShapeDecoration(
+                shape: CircleBorder(
+                  side: BorderSide(
+                    width: 5,
+                    color: Colors.white,
+                  ),
+                ),
+              )
+            : null,
         child: CircleAvatar(
           backgroundColor: theme.canvasColor,
           child: ClipOval(
