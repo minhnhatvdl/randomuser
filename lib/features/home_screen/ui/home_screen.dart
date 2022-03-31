@@ -42,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen>
         body: CustomScrollView(
           controller: _scrollController,
           physics: const BouncingScrollPhysics(),
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           slivers: const [
             HomeAppBar(),
             ListUsers(),

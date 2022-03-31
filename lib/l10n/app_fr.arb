@@ -1,5 +1,6 @@
 {
     "appName": "Randomuser",
     "bornIn": "Né(e) le",
-    "joinedBy": "A rejoint en"
+    "joinedBy": "A rejoint en",
+    "searchUser": "Rechercher un utilisateur"
 }

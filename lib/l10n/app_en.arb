@@ -1,5 +1,6 @@
 {
     "appName": "Randomuser",
     "bornIn": "Born",
-    "joinedBy": "Joined"
+    "joinedBy": "Joined",
+    "searchUser": "Search a user"
 }

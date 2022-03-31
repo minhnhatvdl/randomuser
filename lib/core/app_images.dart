@@ -6,4 +6,6 @@ class AppImages {
   static const String envelopeIcon = 'assets/icons/envelope.svg';
   static const String smartphoneIcon = 'assets/icons/smartphone.svg';
   static const String arrowLeftIcon = 'assets/icons/arrow_left.svg';
+  static const String searchIcon = 'assets/icons/search.svg';
+  static const String crossIcon = 'assets/icons/cross.svg';
 }
