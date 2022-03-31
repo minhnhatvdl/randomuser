@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:randomuser/features/home_screen/repositories/users_repository.dart';
@@ -49,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen>
             SliverPadding(
               padding: EdgeInsets.symmetric(
                 vertical: 20,
-                horizontal: width > 400 ? (width - 400) / 2 : 20,
+                horizontal: width > 400 ? max((width - 400) / 2, 20) : 20,
               ),
               sliver: const ListUsers(),
             ),

@@ -6,6 +6,4 @@ GetIt locator = GetIt.instance;
 Future<void> setupLocator() async {
   // repositories
   locator.registerLazySingleton(() => UsersRepository());
-
-  // services
 }
