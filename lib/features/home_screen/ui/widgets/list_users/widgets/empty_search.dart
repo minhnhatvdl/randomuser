@@ -9,12 +9,9 @@ class EmptySearch extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
 
     return SliverToBoxAdapter(
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Text(
-          AppLocalizations.of(context)!.noUserFound,
-          style: theme.textTheme.subtitle1,
-        ),
+      child: Text(
+        AppLocalizations.of(context)!.noUserFound,
+        style: theme.textTheme.subtitle1,
       ),
     );
   }

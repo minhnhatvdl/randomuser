@@ -6,16 +6,13 @@ class ListUsersGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverPadding(
-      padding: const EdgeInsets.all(20),
-      sliver: SliverGrid(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          mainAxisSpacing: 20,
-          crossAxisSpacing: 20,
-          crossAxisCount: 2,
-        ),
-        delegate: delegate,
+    return SliverGrid(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        mainAxisSpacing: 20,
+        crossAxisSpacing: 20,
+        crossAxisCount: 2,
       ),
+      delegate: delegate,
     );
   }
 }

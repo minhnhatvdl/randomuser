@@ -36,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     super.build(context);
 
+    final double width = MediaQuery.of(context).size.width;
     return StateNotifierProvider<UsersService, UsersState>.value(
       value: _usersService,
       child: Scaffold(
@@ -43,9 +44,15 @@ class _HomeScreenState extends State<HomeScreen>
           controller: _scrollController,
           physics: const BouncingScrollPhysics(),
           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-          slivers: const [
-            HomeAppBar(),
-            ListUsers(),
+          slivers: [
+            const HomeAppBar(),
+            SliverPadding(
+              padding: EdgeInsets.symmetric(
+                vertical: 20,
+                horizontal: width > 400 ? (width - 400) / 2 : 20,
+              ),
+              sliver: const ListUsers(),
+            ),
           ],
         ),
       ),

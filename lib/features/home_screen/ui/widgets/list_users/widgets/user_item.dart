@@ -22,42 +22,32 @@ class UserItem extends StatelessWidget {
       ),
       child: BoxShadowContainer(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(bottom: 6),
-              child: HeroWidget(
-                tag: HeroTagUtil.user(user),
-                child: AvatarProfile(
-                  username: UserUtil.getFullName(user),
-                  urlImage: user.picture.medium,
-                  size: AvatarProfileSize.medium,
-                ),
+            HeroWidget(
+              tag: HeroTagUtil.user(user),
+              child: AvatarProfile(
+                username: UserUtil.getFullName(user),
+                urlImage: user.picture.medium,
+                size: AvatarProfileSize.medium,
               ),
             ),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  FittedBox(
-                    child: Text(
-                      UserUtil.getFullName(user),
-                      style: theme.textTheme.subtitle1,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  Text(
-                    UserUtil.getAddress(user),
-                    style: theme.textTheme.bodyText2!.copyWith(
-                      color: theme.dividerColor,
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+            FittedBox(
+              child: Text(
+                UserUtil.getFullName(user),
+                style: theme.textTheme.subtitle1,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
+            ),
+            Text(
+              UserUtil.getAddress(user),
+              style: theme.textTheme.bodyText2!.copyWith(
+                color: theme.dividerColor,
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
             ),
           ],
         ),
