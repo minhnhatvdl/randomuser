@@ -2,5 +2,6 @@
     "appName": "Randomuser",
     "bornIn": "Born",
     "joinedBy": "Joined",
-    "searchUser": "Search a user"
+    "searchUser": "Search a user",
+    "noUserFound": "No user found !"
 }

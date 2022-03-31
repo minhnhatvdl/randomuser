@@ -13,7 +13,7 @@ class HomeAppBar extends StatelessWidget {
       centerTitle: true,
       pinned: true,
       floating: true,
-      snap: true,
+      // snap: true,
       elevation: 0,
       bottom: PreferredSize(
         child: Container(

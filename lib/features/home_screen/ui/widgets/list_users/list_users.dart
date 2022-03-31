@@ -4,9 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:randomuser/common/models/user/user_model.dart';
 import 'package:randomuser/features/home_screen/services/users_service/users_service.dart';
 import 'package:randomuser/features/home_screen/services/users_service/users_state/users_state.dart';
-import 'package:randomuser/features/home_screen/ui/widgets/list_users/user_item.dart';
-import 'list_users_grid.dart';
-import 'loading_user_item.dart';
+import 'widgets/widgets.dart';
 
 class ListUsers extends StatelessWidget {
   const ListUsers({Key? key}) : super(key: key);
@@ -32,6 +30,16 @@ class ListUsers extends StatelessWidget {
               childCount: users.length + 2,
             ),
           );
+        } else if (usersState is SearchingUsersState) {
+          final List<UserModel> users = usersState.users;
+          return users.isNotEmpty
+              ? ListUsersGrid(
+                  delegate: SliverChildBuilderDelegate(
+                    (_, int index) => UserItem(users[index]),
+                    childCount: users.length,
+                  ),
+                )
+              : const EmptySearch();
         }
         return const SliverToBoxAdapter();
       },

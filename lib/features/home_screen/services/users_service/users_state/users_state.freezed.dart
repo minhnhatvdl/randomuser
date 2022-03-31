@@ -35,6 +35,12 @@ class _$UsersStateTearOff {
       users,
     );
   }
+
+  SearchingUsersState searching(List<UserModel> users) {
+    return SearchingUsersState(
+      users,
+    );
+  }
 }
 
 /// @nodoc
@@ -48,6 +54,7 @@ mixin _$UsersState {
     required TResult Function() error,
     required TResult Function() loading,
     required TResult Function(List<UserModel> users) loaded,
+    required TResult Function(List<UserModel> users) searching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +63,7 @@ mixin _$UsersState {
     TResult Function()? error,
     TResult Function()? loading,
     TResult Function(List<UserModel> users)? loaded,
+    TResult Function(List<UserModel> users)? searching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +72,7 @@ mixin _$UsersState {
     TResult Function()? error,
     TResult Function()? loading,
     TResult Function(List<UserModel> users)? loaded,
+    TResult Function(List<UserModel> users)? searching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -73,6 +82,7 @@ mixin _$UsersState {
     required TResult Function(ErrorUsersState value) error,
     required TResult Function(LoadingUsersState value) loading,
     required TResult Function(LoadedUsersState value) loaded,
+    required TResult Function(SearchingUsersState value) searching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +91,7 @@ mixin _$UsersState {
     TResult Function(ErrorUsersState value)? error,
     TResult Function(LoadingUsersState value)? loading,
     TResult Function(LoadedUsersState value)? loaded,
+    TResult Function(SearchingUsersState value)? searching,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,6 +100,7 @@ mixin _$UsersState {
     TResult Function(ErrorUsersState value)? error,
     TResult Function(LoadingUsersState value)? loading,
     TResult Function(LoadedUsersState value)? loaded,
+    TResult Function(SearchingUsersState value)? searching,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -154,6 +166,7 @@ class _$InitUsersState implements InitUsersState {
     required TResult Function() error,
     required TResult Function() loading,
     required TResult Function(List<UserModel> users) loaded,
+    required TResult Function(List<UserModel> users) searching,
   }) {
     return init();
   }
@@ -165,6 +178,7 @@ class _$InitUsersState implements InitUsersState {
     TResult Function()? error,
     TResult Function()? loading,
     TResult Function(List<UserModel> users)? loaded,
+    TResult Function(List<UserModel> users)? searching,
   }) {
     return init?.call();
   }
@@ -176,6 +190,7 @@ class _$InitUsersState implements InitUsersState {
     TResult Function()? error,
     TResult Function()? loading,
     TResult Function(List<UserModel> users)? loaded,
+    TResult Function(List<UserModel> users)? searching,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -191,6 +206,7 @@ class _$InitUsersState implements InitUsersState {
     required TResult Function(ErrorUsersState value) error,
     required TResult Function(LoadingUsersState value) loading,
     required TResult Function(LoadedUsersState value) loaded,
+    required TResult Function(SearchingUsersState value) searching,
   }) {
     return init(this);
   }
@@ -202,6 +218,7 @@ class _$InitUsersState implements InitUsersState {
     TResult Function(ErrorUsersState value)? error,
     TResult Function(LoadingUsersState value)? loading,
     TResult Function(LoadedUsersState value)? loaded,
+    TResult Function(SearchingUsersState value)? searching,
   }) {
     return init?.call(this);
   }
@@ -213,6 +230,7 @@ class _$InitUsersState implements InitUsersState {
     TResult Function(ErrorUsersState value)? error,
     TResult Function(LoadingUsersState value)? loading,
     TResult Function(LoadedUsersState value)? loaded,
+    TResult Function(SearchingUsersState value)? searching,
     required TResult orElse(),
   }) {
     if (init != null) {
@@ -270,6 +288,7 @@ class _$ErrorUsersState implements ErrorUsersState {
     required TResult Function() error,
     required TResult Function() loading,
     required TResult Function(List<UserModel> users) loaded,
+    required TResult Function(List<UserModel> users) searching,
   }) {
     return error();
   }
@@ -281,6 +300,7 @@ class _$ErrorUsersState implements ErrorUsersState {
     TResult Function()? error,
     TResult Function()? loading,
     TResult Function(List<UserModel> users)? loaded,
+    TResult Function(List<UserModel> users)? searching,
   }) {
     return error?.call();
   }
@@ -292,6 +312,7 @@ class _$ErrorUsersState implements ErrorUsersState {
     TResult Function()? error,
     TResult Function()? loading,
     TResult Function(List<UserModel> users)? loaded,
+    TResult Function(List<UserModel> users)? searching,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -307,6 +328,7 @@ class _$ErrorUsersState implements ErrorUsersState {
     required TResult Function(ErrorUsersState value) error,
     required TResult Function(LoadingUsersState value) loading,
     required TResult Function(LoadedUsersState value) loaded,
+    required TResult Function(SearchingUsersState value) searching,
   }) {
     return error(this);
   }
@@ -318,6 +340,7 @@ class _$ErrorUsersState implements ErrorUsersState {
     TResult Function(ErrorUsersState value)? error,
     TResult Function(LoadingUsersState value)? loading,
     TResult Function(LoadedUsersState value)? loaded,
+    TResult Function(SearchingUsersState value)? searching,
   }) {
     return error?.call(this);
   }
@@ -329,6 +352,7 @@ class _$ErrorUsersState implements ErrorUsersState {
     TResult Function(ErrorUsersState value)? error,
     TResult Function(LoadingUsersState value)? loading,
     TResult Function(LoadedUsersState value)? loaded,
+    TResult Function(SearchingUsersState value)? searching,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -387,6 +411,7 @@ class _$LoadingUsersState implements LoadingUsersState {
     required TResult Function() error,
     required TResult Function() loading,
     required TResult Function(List<UserModel> users) loaded,
+    required TResult Function(List<UserModel> users) searching,
   }) {
     return loading();
   }
@@ -398,6 +423,7 @@ class _$LoadingUsersState implements LoadingUsersState {
     TResult Function()? error,
     TResult Function()? loading,
     TResult Function(List<UserModel> users)? loaded,
+    TResult Function(List<UserModel> users)? searching,
   }) {
     return loading?.call();
   }
@@ -409,6 +435,7 @@ class _$LoadingUsersState implements LoadingUsersState {
     TResult Function()? error,
     TResult Function()? loading,
     TResult Function(List<UserModel> users)? loaded,
+    TResult Function(List<UserModel> users)? searching,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -424,6 +451,7 @@ class _$LoadingUsersState implements LoadingUsersState {
     required TResult Function(ErrorUsersState value) error,
     required TResult Function(LoadingUsersState value) loading,
     required TResult Function(LoadedUsersState value) loaded,
+    required TResult Function(SearchingUsersState value) searching,
   }) {
     return loading(this);
   }
@@ -435,6 +463,7 @@ class _$LoadingUsersState implements LoadingUsersState {
     TResult Function(ErrorUsersState value)? error,
     TResult Function(LoadingUsersState value)? loading,
     TResult Function(LoadedUsersState value)? loaded,
+    TResult Function(SearchingUsersState value)? searching,
   }) {
     return loading?.call(this);
   }
@@ -446,6 +475,7 @@ class _$LoadingUsersState implements LoadingUsersState {
     TResult Function(ErrorUsersState value)? error,
     TResult Function(LoadingUsersState value)? loading,
     TResult Function(LoadedUsersState value)? loaded,
+    TResult Function(SearchingUsersState value)? searching,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -528,6 +558,7 @@ class _$LoadedUsersState implements LoadedUsersState {
     required TResult Function() error,
     required TResult Function() loading,
     required TResult Function(List<UserModel> users) loaded,
+    required TResult Function(List<UserModel> users) searching,
   }) {
     return loaded(users);
   }
@@ -539,6 +570,7 @@ class _$LoadedUsersState implements LoadedUsersState {
     TResult Function()? error,
     TResult Function()? loading,
     TResult Function(List<UserModel> users)? loaded,
+    TResult Function(List<UserModel> users)? searching,
   }) {
     return loaded?.call(users);
   }
@@ -550,6 +582,7 @@ class _$LoadedUsersState implements LoadedUsersState {
     TResult Function()? error,
     TResult Function()? loading,
     TResult Function(List<UserModel> users)? loaded,
+    TResult Function(List<UserModel> users)? searching,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -565,6 +598,7 @@ class _$LoadedUsersState implements LoadedUsersState {
     required TResult Function(ErrorUsersState value) error,
     required TResult Function(LoadingUsersState value) loading,
     required TResult Function(LoadedUsersState value) loaded,
+    required TResult Function(SearchingUsersState value) searching,
   }) {
     return loaded(this);
   }
@@ -576,6 +610,7 @@ class _$LoadedUsersState implements LoadedUsersState {
     TResult Function(ErrorUsersState value)? error,
     TResult Function(LoadingUsersState value)? loading,
     TResult Function(LoadedUsersState value)? loaded,
+    TResult Function(SearchingUsersState value)? searching,
   }) {
     return loaded?.call(this);
   }
@@ -587,6 +622,7 @@ class _$LoadedUsersState implements LoadedUsersState {
     TResult Function(ErrorUsersState value)? error,
     TResult Function(LoadingUsersState value)? loading,
     TResult Function(LoadedUsersState value)? loaded,
+    TResult Function(SearchingUsersState value)? searching,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -602,5 +638,158 @@ abstract class LoadedUsersState implements UsersState {
   List<UserModel> get users;
   @JsonKey(ignore: true)
   $LoadedUsersStateCopyWith<LoadedUsersState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SearchingUsersStateCopyWith<$Res> {
+  factory $SearchingUsersStateCopyWith(
+          SearchingUsersState value, $Res Function(SearchingUsersState) then) =
+      _$SearchingUsersStateCopyWithImpl<$Res>;
+  $Res call({List<UserModel> users});
+}
+
+/// @nodoc
+class _$SearchingUsersStateCopyWithImpl<$Res>
+    extends _$UsersStateCopyWithImpl<$Res>
+    implements $SearchingUsersStateCopyWith<$Res> {
+  _$SearchingUsersStateCopyWithImpl(
+      SearchingUsersState _value, $Res Function(SearchingUsersState) _then)
+      : super(_value, (v) => _then(v as SearchingUsersState));
+
+  @override
+  SearchingUsersState get _value => super._value as SearchingUsersState;
+
+  @override
+  $Res call({
+    Object? users = freezed,
+  }) {
+    return _then(SearchingUsersState(
+      users == freezed
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<UserModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchingUsersState implements SearchingUsersState {
+  const _$SearchingUsersState(this.users);
+
+  @override
+  final List<UserModel> users;
+
+  @override
+  String toString() {
+    return 'UsersState.searching(users: $users)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SearchingUsersState &&
+            const DeepCollectionEquality().equals(other.users, users));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(users));
+
+  @JsonKey(ignore: true)
+  @override
+  $SearchingUsersStateCopyWith<SearchingUsersState> get copyWith =>
+      _$SearchingUsersStateCopyWithImpl<SearchingUsersState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() init,
+    required TResult Function() error,
+    required TResult Function() loading,
+    required TResult Function(List<UserModel> users) loaded,
+    required TResult Function(List<UserModel> users) searching,
+  }) {
+    return searching(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? error,
+    TResult Function()? loading,
+    TResult Function(List<UserModel> users)? loaded,
+    TResult Function(List<UserModel> users)? searching,
+  }) {
+    return searching?.call(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? init,
+    TResult Function()? error,
+    TResult Function()? loading,
+    TResult Function(List<UserModel> users)? loaded,
+    TResult Function(List<UserModel> users)? searching,
+    required TResult orElse(),
+  }) {
+    if (searching != null) {
+      return searching(users);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitUsersState value) init,
+    required TResult Function(ErrorUsersState value) error,
+    required TResult Function(LoadingUsersState value) loading,
+    required TResult Function(LoadedUsersState value) loaded,
+    required TResult Function(SearchingUsersState value) searching,
+  }) {
+    return searching(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitUsersState value)? init,
+    TResult Function(ErrorUsersState value)? error,
+    TResult Function(LoadingUsersState value)? loading,
+    TResult Function(LoadedUsersState value)? loaded,
+    TResult Function(SearchingUsersState value)? searching,
+  }) {
+    return searching?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitUsersState value)? init,
+    TResult Function(ErrorUsersState value)? error,
+    TResult Function(LoadingUsersState value)? loading,
+    TResult Function(LoadedUsersState value)? loaded,
+    TResult Function(SearchingUsersState value)? searching,
+    required TResult orElse(),
+  }) {
+    if (searching != null) {
+      return searching(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchingUsersState implements UsersState {
+  const factory SearchingUsersState(List<UserModel> users) =
+      _$SearchingUsersState;
+
+  List<UserModel> get users;
+  @JsonKey(ignore: true)
+  $SearchingUsersStateCopyWith<SearchingUsersState> get copyWith =>
       throw _privateConstructorUsedError;
 }

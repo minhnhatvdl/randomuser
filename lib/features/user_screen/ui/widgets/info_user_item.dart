@@ -15,24 +15,26 @@ class InfoUserItem extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
 
     return Padding(
-      padding: const EdgeInsets.only(bottom: 15),
-      child: Row(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(right: 7),
-            child: SvgPicture.asset(
-              icon,
-              color: theme.dividerColor,
-              width: 15,
-            ),
+      padding: const EdgeInsets.only(bottom: 12),
+      child: RichText(
+        text: TextSpan(
+          style: theme.textTheme.bodyText2!.copyWith(
+            color: theme.dividerColor,
           ),
-          Text(
-            text,
-            style: theme.textTheme.bodyText2!.copyWith(
-              color: theme.dividerColor,
+          children: [
+            WidgetSpan(
+              child: Padding(
+                padding: const EdgeInsets.only(right: 7),
+                child: SvgPicture.asset(
+                  icon,
+                  color: theme.dividerColor,
+                  width: 15,
+                ),
+              ),
             ),
-          ),
-        ],
+            TextSpan(text: text),
+          ],
+        ),
       ),
     );
   }

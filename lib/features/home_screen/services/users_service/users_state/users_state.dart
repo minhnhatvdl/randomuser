@@ -8,4 +8,5 @@ class UsersState {
   const factory UsersState.error() = ErrorUsersState;
   const factory UsersState.loading() = LoadingUsersState;
   const factory UsersState.loaded(List<UserModel> users) = LoadedUsersState;
+  const factory UsersState.searching(List<UserModel> users) = SearchingUsersState;
 }

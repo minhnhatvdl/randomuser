@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:randomuser/core/app_images.dart';
+import 'package:randomuser/features/home_screen/services/users_service/users_service.dart';
+import 'package:provider/provider.dart';
 
 class SearchBar extends StatefulWidget {
   const SearchBar({Key? key}) : super(key: key);
@@ -14,6 +16,16 @@ class _SearchBarState extends State<SearchBar> {
   final TextEditingController _textEditingController = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    _textEditingController.addListener(() {
+      final String query = _textEditingController.text.trim();
+      context.read<UsersService>().searchUsers(query);
+      setState(() {});
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final AppLocalizations appLocalizations = AppLocalizations.of(context)!;
     final ThemeData theme = Theme.of(context);
@@ -24,10 +36,6 @@ class _SearchBarState extends State<SearchBar> {
       keyboardType: TextInputType.text,
       onSubmitted: (String value) {
         if (value.trim().isNotEmpty) {}
-      },
-      onTap: () {},
-      onChanged: (String? value) {
-        setState(() {});
       },
       cursorColor: theme.primaryColor,
       decoration: InputDecoration(
@@ -63,11 +71,7 @@ class _SearchBarState extends State<SearchBar> {
         ),
         suffixIcon: _textEditingController.text.isNotEmpty
             ? GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _textEditingController.clear();
-                  });
-                },
+                onTap: () => _textEditingController.clear(),
                 child: Padding(
                   padding: const EdgeInsets.all(10),
                   child: SvgPicture.asset(
@@ -84,5 +88,11 @@ class _SearchBarState extends State<SearchBar> {
             const BoxConstraints(minWidth: 36, maxHeight: 36),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _textEditingController.dispose();
+    super.dispose();
   }
 }

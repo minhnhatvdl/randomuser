@@ -2,5 +2,6 @@
     "appName": "Randomuser",
     "bornIn": "Né(e) le",
     "joinedBy": "A rejoint en",
-    "searchUser": "Rechercher un utilisateur"
+    "searchUser": "Rechercher un utilisateur",
+    "noUserFound": "Aucun utilisateur trouvé !"
 }
