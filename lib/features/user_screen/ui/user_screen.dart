@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:randomuser/common/models/user/user_model.dart';
 import 'package:randomuser/common/ui/avatar_profile/avatar_profile.dart';
+import 'package:randomuser/common/ui/hero_widget.dart';
+import 'package:randomuser/common/utils/hero_tag_util.dart';
 import 'package:randomuser/common/utils/user_util.dart';
 import 'widgets/widgets.dart';
 
@@ -27,11 +29,14 @@ class UserScreen extends StatelessWidget {
               ),
               Positioned(
                 top: heightCover - 50,
-                child: AvatarProfile(
-                  username: UserUtil.getFullName(user),
-                  urlImage: user.picture.large,
-                  size: AvatarProfileSize.large,
-                  showBorder: true,
+                child: HeroWidget(
+                  tag: HeroTagUtil.user(user),
+                  child: AvatarProfile(
+                    username: UserUtil.getFullName(user),
+                    urlImage: user.picture.large,
+                    size: AvatarProfileSize.large,
+                    showBorder: true,
+                  ),
                 ),
               ),
               const Positioned(
